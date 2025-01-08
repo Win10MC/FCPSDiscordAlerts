@@ -2,11 +2,11 @@ import requests
 import xml.etree.ElementTree as ET
 import re
 import discord
-from discord.ext import tasks, commands
+from discord.ext import tasks
 
 intents = discord.Intents.default()
 intents.messages = True
-bot = commands.Bot(command_prefix="!", intents=intents)
+bot = discord.Client(intents=intents)
 
 with open ("token.txt", "r") as file:
     TOKEN = file.read().strip()
